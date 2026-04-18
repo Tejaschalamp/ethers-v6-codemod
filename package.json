@@ -1,0 +1,17 @@
+{
+  "name": "ethers-v6-codemod",
+  "version": "1.0.0",
+  "description": "Codemod to migrate ethers.js v5 → v6 automatically",
+  "scripts": {
+    "test": "jest",
+    "run:remove-utils": "jscodeshift -t transforms/remove-utils.js --extensions=js,ts --parser=tsx src/",
+    "run:remove-providers": "jscodeshift -t transforms/remove-providers.js --extensions=js,ts --parser=tsx src/",
+    "run:rename-web3provider": "jscodeshift -t transforms/rename-web3provider.js --extensions=js,ts --parser=tsx src/",
+    "run:bignumber": "jscodeshift -t transforms/bignumber-to-bigint.js --extensions=js,ts --parser=tsx src/",
+    "run:all": "npm run run:remove-utils && npm run run:remove-providers && npm run run:rename-web3provider && npm run run:bignumber"
+  },
+  "devDependencies": {
+    "jscodeshift": "^0.15.1",
+    "jest": "^29.0.0"
+  }
+}
