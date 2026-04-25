@@ -1,0 +1,43 @@
+schema_version: 1
+name: ethers-v5-to-v6
+version: 1.0.0
+description: Automatically migrates ethers.js v5 code to v6 - handles utils, providers, BigNumber, constants, contract methods, and more
+author: Tejas Chalam P
+engine: jscodeshift
+workflow: workflow.yaml
+codemods:
+  - id: remove-utils
+    name: Remove utils prefix
+    path: ./transforms/remove-utils.js
+  - id: remove-providers  
+    name: Remove providers prefix
+    path: ./transforms/remove-providers.js
+  - id: rename-web3provider
+    name: Rename Web3Provider
+    path: ./transforms/rename-web3provider.js
+  - id: bignumber-to-bigint
+    name: Convert BigNumber to BigInt
+    path: ./transforms/bignumber-to-bigint.js
+  - id: rename-constants
+    name: Rename constants
+    path: ./transforms/rename-constants.js
+  - id: rename-contract-methods
+    name: Rename contract methods
+    path: ./transforms/rename-contract-methods.js
+  - id: rename-solidity-functions
+    name: Rename Solidity functions
+    path: ./transforms/rename-solidity-functions.js
+  - id: fix-imports
+    name: Fix imports
+    path: ./transforms/fix-imports.js
+  - id: rename-misc
+    name: Rename misc (HDNode, getGasPrice)
+    path: ./transforms/rename-misc.js
+meta:
+  tags:
+    - ethereum
+    - ethers
+    - web3
+    - migration
+    - javascript
+    - typescript

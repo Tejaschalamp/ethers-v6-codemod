@@ -1,0 +1,47 @@
+version: '1'
+nodes:
+  - id: remove-utils
+    name: Remove utils
+    engine: jscodeshift
+    path: ./transforms/remove-utils.js
+    steps: []
+  - id: remove-providers
+    name: Remove providers
+    engine: jscodeshift
+    path: ./transforms/remove-providers.js
+    steps: []
+  - id: rename-web3provider
+    name: Rename Web3Provider
+    engine: jscodeshift
+    path: ./transforms/rename-web3provider.js
+    steps: []
+  - id: bignumber-to-bigint
+    name: BigNumber to BigInt
+    engine: jscodeshift
+    path: ./transforms/bignumber-to-bigint.js
+    steps: []
+  - id: rename-constants
+    name: Rename constants
+    engine: jscodeshift
+    path: ./transforms/rename-constants.js
+    steps: []
+  - id: rename-contract-methods
+    name: Rename contract methods
+    engine: jscodeshift
+    path: ./transforms/rename-contract-methods.js
+    steps: []
+  - id: rename-solidity-functions
+    name: Rename Solidity functions
+    engine: jscodeshift
+    path: ./transforms/rename-solidity-functions.js
+    steps: []
+  - id: fix-imports
+    name: Fix imports
+    engine: jscodeshift
+    path: ./transforms/fix-imports.js
+    steps: []
+  - id: rename-misc
+    name: Rename misc
+    engine: jscodeshift
+    path: ./transforms/rename-misc.js
+    steps: []

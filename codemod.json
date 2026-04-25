@@ -1,0 +1,9 @@
+{
+  "name": "ethers-v5-to-v6",
+  "version": "1.0.0",
+  "description": "Automatically migrates ethers.js v5 code to v6 - handles utils, providers, BigNumber, constants, contract methods, and more",
+  "engine": "jscodeshift",
+  "meta": {
+    "tags": ["ethereum", "ethers", "web3", "migration", "javascript", "typescript"]
+  }
+}
